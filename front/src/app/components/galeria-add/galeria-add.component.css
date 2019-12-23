@@ -1,0 +1,18 @@
+.titulo {
+  margin-top: 12%;
+  color: #c8a97e;
+  font-weight: normal;
+  font-family: "Great Vibes", cursive;
+}
+
+.upload {
+  width: 100%;
+  text-align: center;
+  margin-top: 3%;
+}
+
+.image {
+  width: 25%;
+  height: 25%;
+  cursor: pointer;
+}
