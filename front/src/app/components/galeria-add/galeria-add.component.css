@@ -16,3 +16,7 @@
   height: 25%;
   cursor: pointer;
 }
+
+.corner {
+   position:absolute;bottom:6%;right:5%;
+}

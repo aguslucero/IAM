@@ -12,6 +12,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
 import { GaleriaAddComponent } from './components/galeria-add/galeria-add.component';
+import { ReservasComponent } from './components/reservas/reservas.component';
+import { MenusComponent } from './components/menus/menus.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { GaleriaAddComponent } from './components/galeria-add/galeria-add.compon
     FooterComponent,
     MenuComponent,
     GaleriaComponent,
-    GaleriaAddComponent
+    GaleriaAddComponent,
+    ReservasComponent,
+    MenusComponent
   ],
   imports: [
     BrowserModule,

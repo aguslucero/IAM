@@ -1,4 +1,4 @@
-import { GaleriaService } from './../../services/galeria.service';
+import { GaleriaService } from '../../services/galeria.service/galeria.service';
 import { Component, OnInit } from '@angular/core';
 
 

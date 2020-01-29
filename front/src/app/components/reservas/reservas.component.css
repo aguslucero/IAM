@@ -1,0 +1,31 @@
+.titulo{
+  font-size: 65px;
+    color: #c8a97e;
+    font-weight: normal;
+    font-family: "Great Vibes", cursive;
+}
+
+.titulo2{
+  color: #c8a97e;
+  line-height: 1;
+  font-family: "Great Vibes", cursive;
+  font-size: 60px;
+}
+.principal {
+  position: relative;
+    height: 750px;
+    z-index: 0;
+    background-image: url(../../../assets/images/bg_3.jpg);
+    background-size: cover;
+    text-align: center
+};
+
+.reserva {
+ margin-top: 10% !important
+}
+
+.botonreserva{
+  text-align: center;
+}
+
+

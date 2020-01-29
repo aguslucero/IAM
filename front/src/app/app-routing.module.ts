@@ -1,3 +1,5 @@
+import { MenusComponent } from './components/menus/menus.component';
+import { ReservasComponent } from './components/reservas/reservas.component';
 import { GaleriaAddComponent } from './components/galeria-add/galeria-add.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
 import { HomeComponent } from './components/home/home.component';
@@ -14,7 +16,15 @@ const routes: Routes = [
 },
 {
   path: 'galeria',
-  component: GaleriaComponent
+  component: GaleriaAddComponent
+},
+{
+  path: 'reserva',
+  component: ReservasComponent
+},
+{
+  path: 'menus',
+  component: MenusComponent
 }
 ];
 

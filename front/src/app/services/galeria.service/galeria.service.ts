@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Foto} from '../interfaces/Foto'
+import {Foto} from '../../interfaces/Foto';
 
 @Injectable({
   providedIn: 'root'
@@ -22,4 +22,14 @@ URI = 'http://localhost:3001/api/fotos';
   getFotos() {
     return this.http.get<Foto[]>(this.URI);
   }
+
+  getFoto(id: string) {
+    return this.http.get<Foto[]>(`${this.URI}/${id}`);
+  }
+
+  deleteFoto(id: string) {
+    return this.http.delete(`${this.URI}/${id}`);
+  }
+
+
 }
