@@ -6,6 +6,30 @@ import {Menu} from '../../interfaces/Menu';
   providedIn: 'root'
 })
 export class MenuService {
+  URI = 'http://localhost:3001/api/menus';
 
-  constructor() { }
+  constructor( private http: HttpClient ) { }
+
+  crearMenu(title: string, image: File, description: string, price: number) {
+    const fd = new FormData();
+    fd.append('title', title);
+    fd.append('image', image);
+    fd.append('description', description);
+    fd.append('price', price.toString() );
+    return this.http.post(this.URI, fd);
+
+
+  }
+
+  getMenus() {
+    return this.http.get<Menu[]>(this.URI);
+  }
+
+  getMenu(id: string) {
+    return this.http.get<Menu[]>(`${this.URI}/${id}`);
+  }
+
+  deleteMenu(id: string) {
+    return this.http.delete(`${this.URI}/${id}`);
+  }
 }

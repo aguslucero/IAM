@@ -9,6 +9,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
+
+// rutas de usuario
 {
   path: '',
   component: HomeComponent
@@ -16,7 +18,7 @@ const routes: Routes = [
 },
 {
   path: 'galeria',
-  component: GaleriaAddComponent
+  component: GaleriaComponent
 },
 {
   path: 'reserva',
@@ -24,6 +26,20 @@ const routes: Routes = [
 },
 {
   path: 'menus',
+  component: MenusComponent
+},
+
+// rutas de administrador
+{
+  path: 'admin',
+  component: HomeComponent
+},
+{
+  path: 'adminGaleria',
+  component: GaleriaAddComponent
+},
+{
+  path: 'adminPedidos',
   component: MenusComponent
 }
 ];
