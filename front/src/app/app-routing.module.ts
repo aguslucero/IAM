@@ -1,3 +1,4 @@
+import { LogInComponent } from './components/log-in/log-in.component';
 import { MenusComponent } from './components/menus/menus.component';
 import { ReservasComponent } from './components/reservas/reservas.component';
 import { GaleriaAddComponent } from './components/galeria-add/galeria-add.component';
@@ -35,6 +36,10 @@ const routes: Routes = [
   component: HomeComponent
 },
 {
+  path: 'adminLogIn',
+  component: LogInComponent
+},
+{
   path: 'adminGaleria',
   component: GaleriaAddComponent
 },
@@ -42,6 +47,7 @@ const routes: Routes = [
   path: 'adminPedidos',
   component: MenusComponent
 }
+
 ];
 
 @NgModule({
