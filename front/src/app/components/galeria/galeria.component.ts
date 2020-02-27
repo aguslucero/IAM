@@ -19,10 +19,19 @@ export class GaleriaComponent implements OnInit {
     .subscribe(
       res => {
         this.fotos = res;
+        this.pathResolver(this.fotos);
         console.log(this.fotos);
       },
       err => console.log(err),
     );
   }
+
+  pathResolver(fotos) {
+    fotos.forEach(function(value) {
+      const re = /\\/gi;
+      value.imagePath = value.imagePath.replace(re, '/');
+  });
+
+ }
 
 }

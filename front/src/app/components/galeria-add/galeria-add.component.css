@@ -20,3 +20,11 @@
 .corner {
    position:absolute;bottom:6%;right:5%;
 }
+
+
+.foto {
+  margin: 25px;
+  width: 400px;
+  height: 400px;
+  background-size: cover
+}

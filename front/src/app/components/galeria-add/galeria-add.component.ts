@@ -41,6 +41,7 @@ getFotos() {
     .subscribe(
       res => {
         this.fotos = res;
+        this.pathResolver(this.fotos);
         console.log(this.fotos);
       },
       err => console.log(err),
@@ -54,5 +55,13 @@ deleteFoto(id: string) {
       err => console.log(err)
     );
   this.getFotos();
+}
+
+pathResolver(fotos) {
+  fotos.forEach(function(value) {
+    const re = /\\/gi;
+    value.imagePath = value.imagePath.replace(re, '/');
+});
+
 }
 }

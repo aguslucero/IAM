@@ -20,13 +20,16 @@
 </section>
 
 <div class="row">
-  <div class="col-md-4 p-4 " *ngFor="let foto of fotos">
-      <a [href]="'http://localhost:3001/' + foto.imagePath">
-      <img [src]="'http://localhost:3001/' + foto.imagePath" class="img-card-top w-100">
-      </a>
-      <button  class="btn btn-outline-danger corner" (click)="deleteFoto(foto._id)">Eliminar</button>
+  <div class="galeria"*ngFor="let foto of fotos" >
+    <div  class="foto" [style.background-image]="'url(http://localhost:3001/' + foto.imagePath + ')'">
 
+    <button  class="btn btn-outline-danger pull-right" (click)="deleteFoto(foto._id)">Eliminar</button>
+  </div>
     </div>
-</div>
+  </div>
+
+
+
+
 
 

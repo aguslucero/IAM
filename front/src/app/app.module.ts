@@ -15,6 +15,7 @@ import { GaleriaAddComponent } from './components/galeria-add/galeria-add.compon
 import { ReservasComponent } from './components/reservas/reservas.component';
 import { MenusComponent } from './components/menus/menus.component';
 import { LogInComponent } from './components/log-in/log-in.component';
+import { MenusAdminComponent } from './components/menus-admin/menus-admin.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { LogInComponent } from './components/log-in/log-in.component';
     GaleriaAddComponent,
     ReservasComponent,
     MenusComponent,
-    LogInComponent
+    LogInComponent,
+    MenusAdminComponent
   ],
   imports: [
     BrowserModule,
