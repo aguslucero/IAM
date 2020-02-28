@@ -16,6 +16,8 @@ import { ReservasComponent } from './components/reservas/reservas.component';
 import { MenusComponent } from './components/menus/menus.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { MenusAdminComponent } from './components/menus-admin/menus-admin.component';
+import { FormsModule } from '@angular/forms';
+import { CreateMenuComponent } from './components/create-menu/create-menu.component';
 
 
 @NgModule({
@@ -29,12 +31,14 @@ import { MenusAdminComponent } from './components/menus-admin/menus-admin.compon
     ReservasComponent,
     MenusComponent,
     LogInComponent,
-    MenusAdminComponent
+    MenusAdminComponent,
+    CreateMenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

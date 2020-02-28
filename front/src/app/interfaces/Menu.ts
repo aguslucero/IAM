@@ -1,7 +1,9 @@
-export interface Menu {
-  _id?: string;
+export class Menu {
   title: string;
   imagePath: string;
   description: string;
   price: number;
+
+  constructor() { }
+
 }

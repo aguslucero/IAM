@@ -1,0 +1,28 @@
+<div class="col-lg-4 mx-auto">
+  <div class="card">
+      <div class="card-header">
+          Upload a Photo
+      </div>
+      <div class="card-body">
+          <form (submit)="createMenu()">
+              <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Photo's Title" #title required [(ngModel)]="menu.title">
+              </div>
+              <div class="form-group">
+                  <textarea rows="2" class="form-control" placeholder="Photo's Description" required #description [(ngModel)]="menu.description"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" placeholder="precio" required #description [(ngModel)]="menu.price">
+            </div>
+
+              <input type="file" class="d-none" (change)="newPhoto($event)" #photoInput>
+              <img [src]="fotoSeleccionada || 'assets/no-image.png'" class="img-fluid" alt="No image"
+                  (click)="photoInput.click()">
+
+              <button class="btn btn-primary btn-block">
+                  Upload
+              </button>
+          </form>
+      </div>
+  </div>
+</div>

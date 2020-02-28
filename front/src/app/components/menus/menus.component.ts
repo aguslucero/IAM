@@ -14,6 +14,12 @@ export class MenusComponent implements OnInit {
 
   constructor(private menuService: MenuService) {  }
 
+
+
+  ngOnInit() {
+ this.getMenus();
+  }
+
   pathResolver(menus) {
     menus.forEach(function(value) {
       const re = /\\/gi;
@@ -22,16 +28,17 @@ export class MenusComponent implements OnInit {
     console.log(this.menus);
  }
 
-  ngOnInit() {
-    this.menuService.getMenus()
-    .subscribe(
-      res => {
-        this.menus = res;
-        this.pathResolver(this.menus);
-        console.log(this.menus);
-      },
-      err => console.log(err),
-    );
-  }
+ getMenus() {
+  this.menuService.getMenus()
+  .subscribe(
+    res => {
+      this.menus = res;
+      this.pathResolver(this.menus);
+      console.log(this.menus);
+    },
+    err => console.log(err),
+  );
+
+ }
 
 }

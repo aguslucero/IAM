@@ -1,3 +1,4 @@
+import { MenusAdminComponent } from './components/menus-admin/menus-admin.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { MenusComponent } from './components/menus/menus.component';
 import { ReservasComponent } from './components/reservas/reservas.component';
@@ -45,7 +46,7 @@ const routes: Routes = [
 },
 {
   path: 'adminPedidos',
-  component: MenusComponent
+  component: MenusAdminComponent
 }
 
 ];
