@@ -1,6 +1,8 @@
+import { CreateMenuComponent } from './../create-menu/create-menu.component';
 import { Menu } from './../../interfaces/Menu';
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from 'src/app/services/menu.service/menu.service';
+import { MatDialog } from '@angular/material/dialog';
 
 interface HtmlInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
@@ -18,7 +20,7 @@ export class MenusAdminComponent implements OnInit {
   menu = new Menu();
 
 
-  constructor(private menuService: MenuService) {  }
+  constructor(private menuService: MenuService, private dialog: MatDialog) {  }
 
   pathResolver(menus) {
     menus.forEach(function(value) {
@@ -55,6 +57,28 @@ export class MenusAdminComponent implements OnInit {
     }
   }
 
+  crearMenu(): void {
+    const dialogRef = this.dialog.open(CreateMenuComponent, {
+      width: '50%',
+      data: {}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+  deleteMenu(id: string) {
+    this.menuService.deleteMenu(id)
+    .subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err),
+    );
+  }
+
 }
+
 
 

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { MenusAdminComponent } from './../menus-admin/menus-admin.component';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Menu } from 'src/app/interfaces/Menu';
 import { MenuService } from 'src/app/services/menu.service/menu.service';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 interface HtmlInputEvent extends Event {
@@ -21,7 +23,9 @@ export class CreateMenuComponent implements OnInit {
   fotoSeleccionada: string | ArrayBuffer;
   menu = new Menu();
 
-  constructor(private menuService: MenuService) { }
+  constructor(private menuService: MenuService, public dialogRef: MatDialogRef<MenusAdminComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any) { }
+
 
   ngOnInit() {
   }

@@ -1,25 +1,26 @@
+
 <div class="col-lg-4 mx-auto">
   <div class="card">
       <div class="card-header">
-          Upload a Photo
+          Crear menu
       </div>
       <div class="card-body">
           <form (submit)="createMenu()">
               <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Photo's Title" #title required [(ngModel)]="menu.title">
+                  <input type="text" class="form-control" placeholder="titulo" #title required [(ngModel)]="menu.title" [ngModelOptions]="{standalone: true}">
               </div>
               <div class="form-group">
-                  <textarea rows="2" class="form-control" placeholder="Photo's Description" required #description [(ngModel)]="menu.description"></textarea>
+                  <textarea rows="2" class="form-control" placeholder="descripcion" required #description [(ngModel)]="menu.description" [ngModelOptions]="{standalone: true}"></textarea>
               </div>
               <div class="form-group">
-                <input type="number" class="form-control" placeholder="precio" required #description [(ngModel)]="menu.price">
+                <input type="number" class="form-control" placeholder="precio" required #description [(ngModel)]="menu.price" [ngModelOptions]="{standalone: true}">
             </div>
 
               <input type="file" class="d-none" (change)="newPhoto($event)" #photoInput>
-              <img [src]="fotoSeleccionada || 'assets/no-image.png'" class="img-fluid" alt="No image"
+              <img [src]="fotoSeleccionada || 'http://localhost:3000/assets/images/subirImagen.png'" class="img-fluid" alt="No image"
                   (click)="photoInput.click()">
 
-              <button class="btn btn-primary btn-block">
+              <button class="btn btn-primary btn-block" >
                   Upload
               </button>
           </form>

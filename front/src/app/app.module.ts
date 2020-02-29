@@ -18,6 +18,8 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { MenusAdminComponent } from './components/menus-admin/menus-admin.component';
 import { FormsModule } from '@angular/forms';
 import { CreateMenuComponent } from './components/create-menu/create-menu.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -38,9 +40,14 @@ import { CreateMenuComponent } from './components/create-menu/create-menu.compon
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ ],
+  entryComponents: [
+    CreateMenuComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
