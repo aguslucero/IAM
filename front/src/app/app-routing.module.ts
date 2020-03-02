@@ -1,3 +1,4 @@
+import { AuthGuard } from './services/AuthGuard';
 import { MenusAdminComponent } from './components/menus-admin/menus-admin.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { MenusComponent } from './components/menus/menus.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
 },
 {
   path: 'galeria',
-  component: GaleriaComponent
+  component: GaleriaComponent,
+  canActivate: [AuthGuard]
 },
 {
   path: 'reserva',
@@ -28,7 +30,8 @@ const routes: Routes = [
 },
 {
   path: 'menus',
-  component: MenusComponent
+  component: MenusComponent,
+
 },
 
 // rutas de administrador

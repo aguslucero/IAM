@@ -1,3 +1,4 @@
+import { AuthGuard } from './services/AuthGuard';
 import { HttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -44,7 +45,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatDialogModule,
     BrowserAnimationsModule
   ],
-  providers: [ ],
+  providers: [  AuthGuard ],
   entryComponents: [
     CreateMenuComponent
   ],
