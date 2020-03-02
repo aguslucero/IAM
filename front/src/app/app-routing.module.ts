@@ -22,11 +22,10 @@ const routes: Routes = [
 {
   path: 'galeria',
   component: GaleriaComponent,
-  canActivate: [AuthGuard]
 },
 {
   path: 'reserva',
-  component: ReservasComponent
+  component: ReservasComponent,
 },
 {
   path: 'menus',
@@ -37,7 +36,8 @@ const routes: Routes = [
 // rutas de administrador
 {
   path: 'admin',
-  component: HomeComponent
+  component: HomeComponent,
+  canActivate: [AuthGuard]
 },
 {
   path: 'adminLogIn',
@@ -45,11 +45,13 @@ const routes: Routes = [
 },
 {
   path: 'adminGaleria',
-  component: GaleriaAddComponent
+  component: GaleriaAddComponent,
+  canActivate: [AuthGuard]
 },
 {
   path: 'adminPedidos',
-  component: MenusAdminComponent
+  component: MenusAdminComponent,
+  canActivate: [AuthGuard]
 }
 
 ];
