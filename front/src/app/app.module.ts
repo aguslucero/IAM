@@ -21,6 +21,8 @@ import { FormsModule } from '@angular/forms';
 import { CreateMenuComponent } from './components/create-menu/create-menu.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PedidosComponent } from './components/pedidos/pedidos.component';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MenusComponent,
     LogInComponent,
     MenusAdminComponent,
-    CreateMenuComponent
+    CreateMenuComponent,
+    PedidosComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     FormsModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatInputModule
   ],
   providers: [  AuthGuard ],
   entryComponents: [

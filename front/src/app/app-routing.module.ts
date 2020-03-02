@@ -1,3 +1,4 @@
+import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { AuthGuard } from './services/AuthGuard';
 import { MenusAdminComponent } from './components/menus-admin/menus-admin.component';
 import { LogInComponent } from './components/log-in/log-in.component';
@@ -52,6 +53,12 @@ const routes: Routes = [
   path: 'adminPedidos',
   component: MenusAdminComponent,
   canActivate: [AuthGuard]
+},
+{
+  path: 'adminPedidosPendientes',
+  component: PedidosComponent,
+  canActivate: [AuthGuard]
+
 }
 
 ];

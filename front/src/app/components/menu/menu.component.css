@@ -1,0 +1,6 @@
+.actived {
+  border-radius:70px;
+-moz-border-radius:70px;
+-webkit-border-radius:70px;
+  background-color: green;
+}

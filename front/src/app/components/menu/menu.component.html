@@ -29,7 +29,7 @@
 <!-- menu de usuario -->
     <div class="collapse navbar-collapse" id="ftco-nav" *ngIf="!router.url.includes('admin')">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a class="nav-link" href="">Home</a></li>
+        <li class="nav-item "><a class="nav-link" href="">Home</a></li>
         <li class="nav-item"><a  class="nav-link" href="">Sobre nosotros</a></li>
         <li class="nav-item"><a  class="nav-link" routerLink="/galeria">Galeria</a></li>
         <li class="nav-item"><a  class="nav-link" href="">Contacto</a></li>
@@ -41,10 +41,11 @@
  <!-- menu de administrador -->
     <div class="collapse navbar-collapse" id="ftco-nav" *ngIf="router.url.includes('admin')">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a class="nav-link" href="">Home</a></li>
+        <li class="nav-item "><a class="nav-link" href="">Home</a></li>
         <li class="nav-item"><a  class="nav-link" routerLink="/adminGaleria">Galeria</a></li>
         <li class="nav-item"><a  class="nav-link" routerLink="/adminPedidos">pedidos</a></li>
-        <li class="nav-item cta"><a  class="nav-link" routerLink="/reserva">Reservas</a></li>
+        <li class="nav-item "><a  class="nav-link" routerLink="/reserva">Reservas</a></li>
+        <li class="nav-item actived"><a  class="nav-link" >pedidos Activados</a></li>
       </ul>
     </div>
   </div>

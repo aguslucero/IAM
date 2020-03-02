@@ -8,7 +8,7 @@
         <h2 class="titulo"> subir una nueva imagen</h2>
         <input type="text" class="d-none" #titulo>
         <input type="file" class="d-none" (change)="newPhoto($event)" #fotoInput>
-        <img [src]="fotoSeleccionada || 'http://localhost:3000/assets/images/subirImagen.png'" class="image" alt="subirImagen" (click)="fotoInput.click()">
+        <img [src]="fotoSeleccionada || 'assets/images/subirImagen.png'" class="image" alt="subirImagen" (click)="fotoInput.click()">
         <div class="upload">
         <button class="btn btn-primary">subir imagen</button>
       </div>
