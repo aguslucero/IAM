@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/aguslucero/IAM#readme",
   "dependencies": {
+    "@ng-bootstrap/ng-bootstrap": "^6.0.0",
     "@types/jwt-decode": "^2.2.1",
     "express": "^4.17.1",
     "jwt-decode": "^2.2.0",

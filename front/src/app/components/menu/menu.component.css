@@ -4,3 +4,22 @@
 -webkit-border-radius:70px;
   background-color: green;
 }
+
+.NoActived {
+  border-radius:70px;
+  -moz-border-radius:70px;
+  -webkit-border-radius:70px;
+    background-color: red;
+}
+
+.danger {
+  color: red;
+}
+
+.success{
+  color: green;
+}
+
+.disabled{
+  color: #b7b1b1 !important
+}

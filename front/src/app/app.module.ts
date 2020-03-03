@@ -1,3 +1,4 @@
+import { PedidosGuard } from './services/pedidosGuard';
 import { AuthGuard } from './services/AuthGuard';
 import { HttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,6 +24,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
 import {MatInputModule} from '@angular/material/input';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { ErrorPedidosComponent } from './components/error-pedidos/error-pedidos.component';
 
 
 @NgModule({
@@ -38,7 +41,8 @@ import {MatInputModule} from '@angular/material/input';
     LogInComponent,
     MenusAdminComponent,
     CreateMenuComponent,
-    PedidosComponent
+    PedidosComponent,
+    ErrorPedidosComponent
   ],
   imports: [
     BrowserModule,
@@ -47,9 +51,10 @@ import {MatInputModule} from '@angular/material/input';
     FormsModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    MatTooltipModule
   ],
-  providers: [  AuthGuard ],
+  providers: [  AuthGuard, PedidosGuard ],
   entryComponents: [
     CreateMenuComponent
   ],

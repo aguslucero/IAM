@@ -32,4 +32,12 @@ export class MenuService {
   deleteMenu(id: string) {
     return this.http.delete(`${this.URI}/${id}`);
   }
+
+  itsActived() {
+    return this.http.get('http://localhost:3001/api/itsActived');
+  }
+
+  activateOrDesactivate() {
+    return this.http.get('http://localhost:3001/api/activeOrDesactive');
+  }
 }

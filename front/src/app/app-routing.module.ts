@@ -1,3 +1,5 @@
+import { PedidosGuard } from './services/pedidosGuard';
+import { ErrorPedidosComponent } from './components/error-pedidos/error-pedidos.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { AuthGuard } from './services/AuthGuard';
 import { MenusAdminComponent } from './components/menus-admin/menus-admin.component';
@@ -31,8 +33,14 @@ const routes: Routes = [
 {
   path: 'menus',
   component: MenusComponent,
+  canActivate: [PedidosGuard],
 
 },
+ {
+  path: 'errorPedidos',
+  component: ErrorPedidosComponent,
+
+ },
 
 // rutas de administrador
 {
