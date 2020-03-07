@@ -18,7 +18,7 @@ import { ReservasComponent } from './components/reservas/reservas.component';
 import { MenusComponent } from './components/menus/menus.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { MenusAdminComponent } from './components/menus-admin/menus-admin.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateMenuComponent } from './components/create-menu/create-menu.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,6 +26,10 @@ import { PedidosComponent } from './components/pedidos/pedidos.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { ErrorPedidosComponent } from './components/error-pedidos/error-pedidos.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material';
 
 
 @NgModule({
@@ -52,7 +56,12 @@ import { ErrorPedidosComponent } from './components/error-pedidos/error-pedidos.
     MatDialogModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [  AuthGuard, PedidosGuard ],
   entryComponents: [

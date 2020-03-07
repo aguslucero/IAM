@@ -1,3 +1,8 @@
+<script src="./src/bootstrap-input-spinner.js"></script>
+<script>
+    $("input[type='number']").inputSpinner()
+</script>
+
 <section class="hero-wrap hero-wrap-2" style="background-image: url('assets/images/bg_3.jpg');" data-stellar-background-ratio="0.5">
   <div class="overlay"></div>
   <div class="container">
@@ -9,7 +14,7 @@
   </div>
 </section>
 
-      <div class="col-md-6 order-md-last offset-3  makereservation ">
+      <!-- <div class="col-md-6 order-md-last offset-3  makereservation ">
         <div class="py-md-5">
           <span class="titulo2">Reservá una mesa</span>
             <form action="#">
@@ -79,4 +84,75 @@
           </form>
         </div>
       </div>
+ -->
 
+<mat-horizontal-stepper [linear]="false" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Seleccione un dia</ng-template>
+        <mat-form-field>
+          <mat-label>Choose a date</mat-label>
+          <input matInput id="matInputEle" [matDatepicker]="picker" formControlName="firstCtrl" required >
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Ingrese sus datos</ng-template>
+      <div class="col-md-6 order-md-last offset-3  makereservation ">
+        <div class="py-md-5">
+            <form action="#"  >
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label >Nombre</label>
+                  <input type="text" class="form-control" placeholder="Nombre" formControlName="secondCtrl" >
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label >Apellido</label>
+                  <input type="text" class="form-control" placeholder="Apellido" >
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label >Telefono</label>
+                  <input type="text" class="form-control" placeholder="Telefono">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                 <label class="quantityPersons" >Cantidad de personas</label>
+               <div class="def-number-input number-input safari_only" >
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                <input class="quantity" min="1" max="8" name="quantity" value="1" type="number">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+              </div>
+            </div>
+            </div>
+          </div>
+          </form>
+        </div>
+      </div>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Confirmar</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
