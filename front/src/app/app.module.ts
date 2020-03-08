@@ -30,6 +30,10 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { ComprarComponent } from './components/comprar/comprar.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -46,7 +50,8 @@ import {MatNativeDateModule} from '@angular/material';
     MenusAdminComponent,
     CreateMenuComponent,
     PedidosComponent,
-    ErrorPedidosComponent
+    ErrorPedidosComponent,
+    ComprarComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,11 +66,15 @@ import {MatNativeDateModule} from '@angular/material';
     ReactiveFormsModule,
     MatButtonModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    DragDropModule,
+    MatIconModule,
+    MatCheckboxModule
   ],
   providers: [  AuthGuard, PedidosGuard ],
   entryComponents: [
-    CreateMenuComponent
+    CreateMenuComponent,
+    ComprarComponent
   ],
   bootstrap: [AppComponent]
 })

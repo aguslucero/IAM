@@ -1,8 +1,10 @@
+import { ComprarComponent } from './../comprar/comprar.component';
 // componenete que muestra los menus ejecutivos disponibles para la venta
 import { Component, OnInit } from '@angular/core';
 import { MenuService} from '../../services/menu.service/menu.service';
 import { NgModule } from '@angular/core';
 import { NgStyle } from '@angular/common';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-menus',
@@ -12,7 +14,7 @@ import { NgStyle } from '@angular/common';
 export class MenusComponent implements OnInit {
   menus = [];
 
-  constructor(private menuService: MenuService) {  }
+  constructor(private menuService: MenuService, public dialog: MatDialog) {  }
 
 
 
@@ -39,6 +41,19 @@ export class MenusComponent implements OnInit {
     err => console.log(err),
   );
 
- }
+}
+
+openDialog( menu: any): void {
+  const dialogRef = this.dialog.open(ComprarComponent, {
+    width: '50%',
+    data: {menu}
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('The dialog was closed');
+  });
+}
 
 }
+
+

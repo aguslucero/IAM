@@ -1,13 +1,67 @@
 <section class="hero-wrap hero-wrap-2" style="background-image: url('assets/images/bg_3.jpg');" data-stellar-background-ratio="0.5">
-  <div class="overlay"></div>
   <div class="container">
-    <div class="row no-gutters slider-text align-items-center justify-content-center">
-      <div class="col-md-9  text-center mb-4">
-        <button class="btn btn-primary boton">Crear menu</button>
-        <button class="btn btn-primary boton" routerLink="/adminPedidosPendientes">Pedidos</button>
-      </div>
 
     </div>
 
-  </div>
 </section>
+
+
+<div class="example-container">
+
+
+  <div
+    cdkDropList
+    #todoList="cdkDropList"
+    [cdkDropListData]="ready"
+    [cdkDropListConnectedTo]="[doneList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <h2  class="title">Listos</h2>
+    <mat-form-field class="filters">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Aplicar filtro">
+    </mat-form-field>
+    <div class="example-box" *ngFor="let pedido of ready" cdkDrag>
+      <div class="card border-primary mb-3">
+        <div class="card-header">
+          <h5 >{{pedido.title}}</h5>
+        </div>
+        <div class="card-body text-primary">
+          <h5 class="card-title">{{pedido.name}} {{pedido.lastName}}</h5>
+          <p class="card-text"> Nro de Telefono: {{pedido.phone}}</p>
+          <p class="card-text"> Hora de retiro: {{pedido.hour}} hs</p>
+        </div>
+        <button class="btn btn-primary btn-block" (click)="delivered(pedido._id)" > Marcar como Entregado </button>
+    </div>
+  </div>
+</div>
+
+<div class="example-container">
+
+
+  <div
+    cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="pending"
+    [cdkDropListConnectedTo]="[todoList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <h2 class="title" >Pendientes</h2>
+    <mat-form-field class="filters">
+      <input matInput (keyup)="applyFilterPending($event.target.value)" placeholder="Aplicar filtro">
+    </mat-form-field>
+    <div class="example-box" *ngFor="let pedido of pending" cdkDrag>
+      <div class="card border-primary mb-3">
+        <div class="card-header">
+          <h5 >{{pedido.title}}</h5>
+        </div>
+        <div class="card-body text-primary">
+          <h5 class="card-title">{{pedido.name}} {{pedido.lastName}}</h5>
+          <p class="card-text"> Nro de Telefono: {{pedido.phone}}</p>
+          <p class="card-text"> Hora de retiro: {{pedido.hour}} hs</p>
+        </div>
+        <button class="btn btn-primary btn-block" (click)="markAsReady(pedido._id)" > Marcar como Listo </button>
+    </div>
+    </div>
+  </div>
+</div>
+

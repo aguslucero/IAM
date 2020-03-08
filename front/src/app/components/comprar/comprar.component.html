@@ -1,0 +1,33 @@
+<div class="container">
+<h6 class="title">{{data.menu.title}} </h6>
+<h6 class="price">Total:${{data.menu.price}}</h6>
+</div>
+
+<table class="example-full-width datos" cellspacing="0">
+  <tr><mat-form-field class="example-full-width">
+    <mat-label>Nombre</mat-label>
+    <input matInput [(ngModel)]="client.name" [ngModelOptions]="{standalone: true}">
+  </mat-form-field></tr>
+  <tr><mat-form-field class="example-full-width lastName">
+    <mat-label>Apellido</mat-label>
+    <input matInput [(ngModel)]="client.lastName" [ngModelOptions]="{standalone: true}">
+  </mat-form-field></tr>
+</table>
+
+<table class="example-full-width datos" cellspacing="0"><tr>
+  <td><mat-form-field class="example-full-width">
+    <mat-label>Telephone</mat-label>
+    <span matPrefix>+54 &nbsp;</span>
+    <input type="tel" matInput placeholder="555-555-1234" [(ngModel)]="client.phone" [ngModelOptions]="{standalone: true}">
+    <mat-icon matSuffix>mode_edit</mat-icon>
+  </mat-form-field></td>
+  <td><mat-form-field class="example-full-width hour">
+    <mat-label>horario de retiro HH:MM</mat-label>
+    <input matInput placeholder="exp 14:00" [(ngModel)]="client.hour" [ngModelOptions]="{standalone: true}">
+  </mat-form-field></td>
+</tr></table>
+
+<p><mat-checkbox [checked]="selected === 1" (change)="selected = 1">Pagar en el local</mat-checkbox></p>
+<p><mat-checkbox [checked]="selected === 2" (change)="selected = 2">Mercado Pago</mat-checkbox></p>
+
+<button class="btn btn-primary btn-block" (click)="createPedido()"> Comprar </button>

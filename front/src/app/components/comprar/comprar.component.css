@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.lastName{
+  margin-left: 100%;
+}
+
+.title{
+  text-align: center;
+  width: 100%;
+}
+
+.price {
+text-align: right;
+}
+
+.datos {
+  margin-top: 5%;
+}
+
+.hour{
+   margin-left: 64%;
+}
