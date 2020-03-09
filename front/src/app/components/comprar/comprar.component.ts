@@ -12,6 +12,7 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class ComprarComponent implements OnInit {
 
+  created = false;
   pedido = new Pedido();
   client = new Client();
   emailFormControl = new FormControl('', [
@@ -32,6 +33,7 @@ export class ComprarComponent implements OnInit {
   }
 
   createPedido() {
+    this.created = true;
     this.pedido.price = this.data.menu.price;
     this.pedido.title = this.data.menu.title;
     this.pedido.state = 'pendiente';

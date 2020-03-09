@@ -1,7 +1,4 @@
-.container {
-  width: 100%;
-  display: flex;
-}
+
 
 .lastName{
   margin-left: 100%;
@@ -13,7 +10,7 @@
 }
 
 .price {
-text-align: right;
+ margin-left: 50%;
 }
 
 .datos {
@@ -21,5 +18,33 @@ text-align: right;
 }
 
 .hour{
-   margin-left: 64%;
+   margin-left: 79%;
+}
+
+.email {
+  width: 70%;
+  margin-left: 15%;
+}
+
+.header {
+  color: #36A0FF;
+  font-size: 27px;
+  padding: 10px;
+}
+
+.bigicon {
+  font-size: 35px;
+  color: #36A0FF;
+}
+
+.form-group{
+display: flex;
+}
+
+.btn-primary{
+  background-color: #36A0FF;
+}
+
+.mat-dialog-container{
+  padding: 0px !important;
 }

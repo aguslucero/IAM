@@ -45,6 +45,7 @@ export class MenusComponent implements OnInit {
 
 openDialog( menu: any): void {
   const dialogRef = this.dialog.open(ComprarComponent, {
+    panelClass: 'custom-dialog-container',
     width: '50%',
     data: {menu}
   });

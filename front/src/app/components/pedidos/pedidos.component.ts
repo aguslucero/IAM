@@ -105,6 +105,7 @@ delivered(id: string) {
       },
      err => console.log(err),
    );
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(pedido.email)) {
   this.pedidosService.sendEmail(pedido.email, pedido.name, pedido.title)
   .subscribe(
     res => {
@@ -112,6 +113,9 @@ delivered(id: string) {
       },
      err => console.log(err),
    );
+} else {
+  console.log('invalid email');
+}
 }
 
 applyFilter(filterValue: string) {
