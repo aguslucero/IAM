@@ -94,10 +94,18 @@ markAsReady(id: string) {
  }
 
 delivered(id: string) {
+  const  pedido = this.ready.find(element => element._id = id );
   const index = this.ready.findIndex(element => element._id = id );
   this.ready.splice(index, 1);
   this.readyAux = this.ready;
   this.pedidosService.delivered(id)
+  .subscribe(
+    res => {
+    console.log(res);
+      },
+     err => console.log(err),
+   );
+  this.pedidosService.sendEmail(pedido.email, pedido.name, pedido.title)
   .subscribe(
     res => {
     console.log(res);

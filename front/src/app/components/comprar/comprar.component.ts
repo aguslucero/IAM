@@ -3,6 +3,7 @@ import { PedidosService } from './../../services/pedidos.service/pedidos.service
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Pedido } from 'src/app/interfaces/pedido';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-comprar',
@@ -13,7 +14,10 @@ export class ComprarComponent implements OnInit {
 
   pedido = new Pedido();
   client = new Client();
-  selected = -1;
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
   constructor(
     public dialogRef: MatDialogRef<ComprarComponent>,
     private pedidosService: PedidosService,
@@ -36,6 +40,7 @@ export class ComprarComponent implements OnInit {
     this.pedido.lastName = this.client.lastName;
     this.pedido.phone = this.client.phone;
     this.pedido.hour = this.client.hour;
+    this.pedido.email = this.client.email;
     this.pedidosService.createPedido(this.pedido)
     .subscribe(
       res => {
@@ -52,6 +57,15 @@ export class Client {
   lastName: string;
   phone: string;
   hour: string;
+  email: string;
 
   constructor() {}
+}
+
+
+export class InputErrorsExample {
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
 }
