@@ -132,3 +132,49 @@ mat-stepper-horizontal {
     }
   }
 }
+
+::ng-deep .mat-horizontal-content-container{
+  text-align: center;
+}
+
+.reservaButton{
+  margin: 1%;
+}
+
+.buttonsContainer{
+  text-align: left;
+}
+
+.danger{
+  color: red;
+}
+
+.number-input.number-input{
+  width: 100%;
+}
+
+
+.dataVerification{
+  font-size: 20px;
+  text-align: left;
+  color: black;
+  font-weight: bold;
+  margin-left: 40%
+
+}
+
+.data{
+  display: inline-block;
+  font-size: 20px;
+  width: 120px;
+}
+
+.persons {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 52px;
+}
+
+.quantity {
+  width: 50%;
+  text-align: center
+}
