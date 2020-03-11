@@ -1,0 +1,131 @@
+.titulo{
+  font-size: 65px;
+    color: #c8a97e;
+    font-weight: normal;
+    font-family: "Great Vibes", cursive;
+}
+
+.titulo2{
+  color: #c8a97e;
+  line-height: 1;
+  font-family: "Great Vibes", cursive;
+  font-size: 60px;
+}
+.principal {
+  position: relative;
+    height: 750px;
+    z-index: 0;
+    background-image: url(../../../assets/images/bg_3.jpg);
+    background-size: cover;
+    text-align: center;
+};
+
+
+.reserva {
+ margin-top: 10% !important
+}
+
+.botonreserva{
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  animation: fadeIn 0.5s;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: #777;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+
+.btn-success {
+  margin: 2%;
+}
+
+.mat-header-cell {
+  text-align: center;
+}
+
+.mat-cell {
+  text-align: center;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.spinner {
+margin-top: 100px;
+margin-left: 45%;
+
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.tabCointainer{
+  width: 80%;
+  margin-left: 10%;
+}
+
+.personas{
+  margin-left: 100px;
+}
+
+.calendar{
+  text-align: center;
+  width: 20%;
+}
+
+.calendardiv {
+  width: 100%;
+  text-align: right;
+}
+
+.btn-success{
+margin-left: 25%;
+margin-right: 10%;
+}

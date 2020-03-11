@@ -20,4 +20,12 @@ createReserva( reserva: Reserva) {
  });
 }
 
+getReservasForDay(date: string) {
+  return this.http.get('http://localhost:3001/api/reserva/getReservaForDay/' + date);
+}
+
+deleteReserva(id: string) {
+  return this.http.delete('http://localhost:3001/api/reserva/deleteReserva/' + id);
+ }
+
 }

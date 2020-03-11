@@ -1,3 +1,4 @@
+import { ReservasAdminComponent } from './components/reservas-admin/reservas-admin.component';
 import { PedidosGuard } from './services/pedidosGuard';
 import { ErrorPedidosComponent } from './components/error-pedidos/error-pedidos.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
@@ -65,6 +66,13 @@ const routes: Routes = [
 {
   path: 'adminPedidosPendientes',
   component: PedidosComponent,
+  canActivate: [AuthGuard]
+
+},
+
+{
+  path: 'adminReservas',
+  component: ReservasAdminComponent,
   canActivate: [AuthGuard]
 
 }

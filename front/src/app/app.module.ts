@@ -1,3 +1,4 @@
+import { CreateReservaAdminComponent } from './components/create-reserva-admin/create-reserva-admin.component';
 import { PedidosGuard } from './services/pedidosGuard';
 import { AuthGuard } from './services/AuthGuard';
 import { HttpClient } from '@angular/common/http';
@@ -34,6 +35,9 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { ComprarComponent } from './components/comprar/comprar.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ReservasAdminComponent } from './components/reservas-admin/reservas-admin.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -52,6 +56,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     PedidosComponent,
     ErrorPedidosComponent,
     ComprarComponent,
+    ReservasAdminComponent,
+    CreateReservaAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -69,12 +75,15 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatNativeDateModule,
     DragDropModule,
     MatIconModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTableModule,
+    MatProgressSpinnerModule
   ],
   providers: [  AuthGuard, PedidosGuard ],
   entryComponents: [
     CreateMenuComponent,
-    ComprarComponent
+    ComprarComponent,
+    CreateReservaAdminComponent
   ],
   bootstrap: [AppComponent]
 })
