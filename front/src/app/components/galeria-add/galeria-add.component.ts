@@ -32,8 +32,13 @@ export class GaleriaAddComponent implements OnInit {
   }
 uploadPhoto(): boolean {
 this.galeriaService.crearFoto(this.file.name, this.file)
- .subscribe(res => console.log(res), err => console.log(err));
-return false ;
+ .subscribe(
+   res => {
+   console.log(res);
+   this.getFotos();
+},
+   err => console.log(err));
+return false;
 }
 
 getFotos() {
@@ -51,10 +56,13 @@ getFotos() {
 deleteFoto(id: string) {
   this.galeriaService.deleteFoto(id)
     .subscribe(
-      res => console.log(res),
+      res => {
+        this.getFotos();
+        console.log(res);
+      },
       err => console.log(err)
     );
-  this.getFotos();
+
 }
 
 pathResolver(fotos) {
