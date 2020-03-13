@@ -3,7 +3,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { Menu } from 'src/app/interfaces/Menu';
 import { MenuService } from 'src/app/services/menu.service/menu.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-
+import { Router } from '@angular/router';
 
 interface HtmlInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
@@ -23,7 +23,9 @@ export class CreateMenuComponent implements OnInit {
   fotoSeleccionada: string | ArrayBuffer;
   menu = new Menu();
 
-  constructor(private menuService: MenuService, public dialogRef: MatDialogRef<MenusAdminComponent>,
+  constructor(private menuService: MenuService,
+              public router: Router,
+              public dialogRef: MatDialogRef<MenusAdminComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) { }
 
 
@@ -47,7 +49,7 @@ export class CreateMenuComponent implements OnInit {
       },
       err => console.log(err),
     );
-
+    this.dialogRef.close();
   }
 
 }

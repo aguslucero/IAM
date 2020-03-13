@@ -64,7 +64,7 @@ export class MenusAdminComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      this.getMenus();
     });
   }
 
@@ -73,6 +73,7 @@ export class MenusAdminComponent implements OnInit {
     .subscribe(
       res => {
         console.log(res);
+        this.getMenus();
       },
       err => console.log(err),
     );
