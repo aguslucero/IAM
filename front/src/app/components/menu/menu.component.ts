@@ -42,4 +42,8 @@ export class MenuComponent implements OnInit {
    err => console.log(err)
    );
   }
+
+  logout() {
+    localStorage.removeItem('token');
+  }
 }
