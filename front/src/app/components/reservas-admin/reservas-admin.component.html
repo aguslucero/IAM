@@ -27,11 +27,23 @@
   <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
 
+<mat-form-field class="calendar"  >
+  <mat-label>Horario</mat-label>
+  <mat-select [formControl]="horarioControl" (selectionChange)="applyFilterHour($event.value)">
+    <mat-option value = 'Todos' >-- Todos --</mat-option>
+    <mat-optgroup *ngFor="let group of horarioGroups" [label]="group.name"
+                  [disabled]="group.disabled">
+      <mat-option *ngFor="let horario of group.horario" [value]="horario.value">
+        {{horario.value}}
+      </mat-option>
+    </mat-optgroup>
+  </mat-select>
+</mat-form-field>
 <button type="button" class="btn btn-success" (click)="crearReserva()" >Crear reserva</button>
 </div>
 <div class="tabCointainer">
 <mat-form-field>
-  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Aplicar filtro">
+  <input matInput (keyup)="applyFiltername($event.target.value)" placeholder="Aplicar filtro">
 </mat-form-field>
 
 <table mat-table
@@ -43,11 +55,16 @@
   <td mat-cell *matCellDef="let element"> {{element.nombre}} {{element.apellido}} </td>
 </ng-container>
 
+<ng-container matColumnDef="persons">
+  <th mat-header-cell *matHeaderCellDef> Personas</th>
+  <td mat-cell *matCellDef="let element"> {{element.personas}} </td>
+</ng-container>
 
 <ng-container matColumnDef="day">
   <th mat-header-cell *matHeaderCellDef> Dia </th>
   <td mat-cell *matCellDef="let element"> {{element.dia}} </td>
 </ng-container>
+
 
 <ng-container matColumnDef="hour">
   <th mat-header-cell *matHeaderCellDef> Hora </th>
@@ -69,7 +86,6 @@
 
       <div class="example-element-description description">
       <strong> Telefono: </strong> {{element.telefono}}
-       <strong class="personas"> Personas: </strong> {{element.personas}}
       </div>
     </div>
   </td>

@@ -5,9 +5,24 @@ import { MatTableDataSource, MatDialog } from '@angular/material';
 import { Reserva } from 'src/app/interfaces/reserva';
 import * as moment from 'moment';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {FormControl} from '@angular/forms';
+
+
 
 
 let ELEMENT_DATA: Reserva[] = [ ] ;
+interface Horario {
+  value: string;
+  viewValue: string;
+}
+
+interface HorarioGroup {
+  disabled?: boolean;
+  name: string;
+  horario: Horario[];
+}
+
+
 
 @Component({
   selector: 'app-reservas-admin',
@@ -23,11 +38,33 @@ let ELEMENT_DATA: Reserva[] = [ ] ;
 })
 export class ReservasAdminComponent implements OnInit {
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-  columnsToDisplay = ['name', 'day', 'hour', 'options'];
+  columnsToDisplay = ['name', 'persons',  'day', 'hour', 'options'];
   expandedElement: Reserva | null;
   loading = true;
   date = moment().format('DD-MM-YYYY');
   daySelected: string ;
+  horarioControl = new FormControl();
+  horarioGroups: HorarioGroup[] = [
+    {
+      name: 'Medio Dia',
+      horario: [
+        {viewValue: '11:00', value: '11'},
+        {viewValue: '12:00', value: '12'},
+        {viewValue: '13:00', value: '13'},
+        {viewValue: '14:00', value: '14'}
+      ]
+    },
+    {
+      name: 'noche',
+      horario: [
+        {viewValue: '20:00', value: '20'},
+        {viewValue: '21:00', value: '21'},
+        {viewValue: '22:00', value: '22'}
+      ]
+    }
+  ];
+
+
   constructor( private reservaService: ReservaService, private dialog: MatDialog) { }
 
   ngOnInit() {
@@ -35,7 +72,20 @@ export class ReservasAdminComponent implements OnInit {
     console.log('datasurse', this.dataSource);
   }
 
-  applyFilter(filterValue: string) {
+  applyFilterHour(filterValue: string) {
+    this.dataSource.filterPredicate = function customFilter(data , filter:string ): boolean {
+      return (data.hora.startsWith(filter));
+    };
+    if(filterValue === 'Todos'){
+      this.dataSource.filter = "";
+    } else {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+      }
+    }
+   applyFiltername(filterValue: string) {
+    this.dataSource.filterPredicate = function customFilter(data , filter:string ): boolean {
+      return (data.nombre.startsWith(filter) || data.apellido.startsWith(filter) );
+    };
     this.dataSource.filter = filterValue.trim().toLowerCase();
    }
 
@@ -93,3 +143,6 @@ export class ReservasAdminComponent implements OnInit {
 
 
 }
+
+
+

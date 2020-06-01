@@ -38,6 +38,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ReservasAdminComponent } from './components/reservas-admin/reservas-admin.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatIconModule,
     MatCheckboxModule,
     MatTableModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSelectModule
   ],
   providers: [  AuthGuard, PedidosGuard ],
   entryComponents: [
