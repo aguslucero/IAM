@@ -1,3 +1,4 @@
+import { AboutComponent } from './components/about/about.component';
 import { ReservasAdminComponent } from './components/reservas-admin/reservas-admin.component';
 import { PedidosGuard } from './services/pedidosGuard';
 import { ErrorPedidosComponent } from './components/error-pedidos/error-pedidos.component';
@@ -42,7 +43,10 @@ const routes: Routes = [
   component: ErrorPedidosComponent,
 
  },
-
+ {
+  path: 'about',
+  component: AboutComponent,
+ },
 // rutas de administrador
 {
   path: 'admin',

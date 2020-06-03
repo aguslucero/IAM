@@ -1,0 +1,35 @@
+<div class="createMenu">
+  <div class="card">
+      <div class="card-header">
+          Modificar menu
+      </div>
+      <div class="card-body">
+          <form (submit)="updateMenu()">
+              <div class="form-group">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Titulo</mat-label>
+                  <input matInput [(ngModel)]="menu.title" [ngModelOptions]="{standalone: true}" >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Precio</mat-label>
+                  <input matInput [(ngModel)]="menu.price" [ngModelOptions]="{standalone: true}" >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Descripcion</mat-label>
+                  <textarea matInput placeholder="descripcion" [(ngModel)]="menu.description" [ngModelOptions]="{standalone: true}"></textarea>
+                </mat-form-field>
+
+              </div>
+
+            <div class="selecPhoto">
+              <input type="file" class="d-none" (change)="newPhoto($event)" #photoInput>
+              <img [src]="fotoSeleccionada || 'http://localhost:3001/'+ menu.imagePath" class="image" alt="No image"
+                  (click)="photoInput.click()">
+            </div>
+              <button class="btn btn-primary btn-block" >
+                 Modificar
+              </button>
+          </form>
+      </div>
+  </div>
+</div>

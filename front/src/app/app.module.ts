@@ -39,6 +39,8 @@ import { ReservasAdminComponent } from './components/reservas-admin/reservas-adm
 import {MatTableModule} from '@angular/material/table';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSelectModule} from '@angular/material/select';
+import { ModMenuComponent } from './components/mod-menu/mod-menu.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
@@ -58,7 +60,9 @@ import {MatSelectModule} from '@angular/material/select';
     ErrorPedidosComponent,
     ComprarComponent,
     ReservasAdminComponent,
-    CreateReservaAdminComponent
+    CreateReservaAdminComponent,
+    ModMenuComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +89,8 @@ import {MatSelectModule} from '@angular/material/select';
   entryComponents: [
     CreateMenuComponent,
     ComprarComponent,
-    CreateReservaAdminComponent
+    CreateReservaAdminComponent,
+    ModMenuComponent
   ],
   bootstrap: [AppComponent]
 })

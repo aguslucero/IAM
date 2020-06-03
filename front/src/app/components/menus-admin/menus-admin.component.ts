@@ -1,5 +1,6 @@
+import { ModMenuComponent } from './../mod-menu/mod-menu.component';
+import { Menu } from 'src/app/interfaces/Menu';
 import { CreateMenuComponent } from './../create-menu/create-menu.component';
-import { Menu } from './../../interfaces/Menu';
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from 'src/app/services/menu.service/menu.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -63,6 +64,19 @@ export class MenusAdminComponent implements OnInit {
       data: {}
     });
 
+
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.getMenus();
+    });
+  }
+
+
+  modMenu(selectedMenu: Menu ): void {
+    const dialogRef = this.dialog.open(ModMenuComponent, {
+      width: '50%',
+      data: {selectedMenu }
+    });
     dialogRef.afterClosed().subscribe(result => {
       this.getMenus();
     });

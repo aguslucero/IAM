@@ -10,13 +10,12 @@ interface HtmlInputEvent extends Event {
 }
 
 @Component({
-  selector: 'app-create-menu',
-  templateUrl: './create-menu.component.html',
-  styleUrls: ['./create-menu.component.css']
+  selector: 'app-mod-menu',
+  templateUrl: './mod-menu.component.html',
+  styleUrls: ['./mod-menu.component.css']
 })
+export class ModMenuComponent implements OnInit {
 
-
-export class CreateMenuComponent implements OnInit {
 
   menus = [];
   file: File;
@@ -30,6 +29,10 @@ export class CreateMenuComponent implements OnInit {
 
 
   ngOnInit() {
+    this.menu.description = this.data.selectedMenu.description;
+    this.menu.title = this.data.selectedMenu.title;
+    this.menu.price = this.data.selectedMenu.price;
+    this.menu.imagePath = this.data.selectedMenu.imagePath;
   }
 
   newPhoto(event: HtmlInputEvent): void {
@@ -41,8 +44,8 @@ export class CreateMenuComponent implements OnInit {
     }
   }
 
-   createMenu() {
-    this.menuService.crearMenu( this.menu.title, this.file, this.menu.description , this.menu.price)
+   updateMenu() {
+    this.menuService.updateMenu( this.data.selectedMenu._id,  this.menu.title, this.file, this.menu.description , this.menu.price)
     .subscribe(
       res => {
         console.log(res);
@@ -52,6 +55,5 @@ export class CreateMenuComponent implements OnInit {
     this.dialogRef.close();
   }
 
-
-
 }
+

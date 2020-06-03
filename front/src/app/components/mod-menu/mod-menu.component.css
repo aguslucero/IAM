@@ -1,0 +1,35 @@
+.card{
+  width: 200%;
+}
+
+
+.foto {
+  margin: 25px;
+  width: 400px;
+  height: 400px;
+  background-size: cover
+}
+
+.image {
+  text-align: center;
+  width: 50%;
+  height: 25%;
+  cursor: pointer;
+}
+
+.selecPhoto {
+  width: 100%;
+  text-align: center;
+}
+
+.mat-form-field{
+  width: 100%;
+}
+
+.createMenu {
+  display: flex;
+  text-align: center;
+  width: 50%;
+  max-height: 50%;
+  margin-left: 25%;
+}
