@@ -6,13 +6,11 @@ import { Pedido } from 'src/app/interfaces/pedido';
 import {FormControl, Validators} from '@angular/forms';
 
 @Component({
-  selector: 'app-comprar',
-  templateUrl: './comprar.component.html',
-  styleUrls: ['./comprar.component.css']
+  selector: 'app-mi-pedido',
+  templateUrl: './mi-pedido.component.html',
+  styleUrls: ['./mi-pedido.component.css']
 })
-export class ComprarComponent implements OnInit {
-  cant = 1;
-  menus = [];
+export class MiPedidoComponent implements OnInit {
   created = false;
   pedido = new Pedido();
   client = new Client();
@@ -21,7 +19,7 @@ export class ComprarComponent implements OnInit {
     Validators.email,
   ]);
   constructor(
-    public dialogRef: MatDialogRef<ComprarComponent>,
+    public dialogRef: MatDialogRef<MiPedidoComponent>,
     private pedidosService: PedidosService,
     @Inject(MAT_DIALOG_DATA) public data: any) {}
 
@@ -33,31 +31,25 @@ export class ComprarComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  agregarPedido() {
-    this.menus = [];
-    console.log('entra');
-    const menusaux = localStorage.getItem('menus');
-    if ( menusaux) {
-      this.menus = JSON.parse(menusaux);
-    }
-
-    this.menus.push(this.data.menu);
-    localStorage.setItem('menus', JSON.stringify(this.menus));
-    this.created = true;
-    this.pedido.state = 'pendiente';
-    this.dialogRef.close();
-    // this.pedido.name = this.client.name;
-    // this.pedido.lastName = this.client.lastName;
-    // this.pedido.phone = this.client.phone;
-    // this.pedido.email = this.client.email;
-    // this.pedidosService.createPedido(this.pedido)
-    // .subscribe(
-    //   res => {
-    //     console.log(res);
-    //   },
-    //   err => console.log(err),
-    // );
-  }
+//   createPedido() {
+//     this.created = true;
+//     this.pedido.price = this.data.menu.price;
+//     this.pedido.title = this.data.menu.title;
+//     this.pedido.state = 'pendiente';
+//     this.pedido.description = this.data.menu.description;
+//     this.pedido.name = this.client.name;
+//     this.pedido.lastName = this.client.lastName;
+//     this.pedido.phone = this.client.phone;
+//     this.pedido.hour = this.client.hour;
+//     this.pedido.email = this.client.email;
+//     this.pedidosService.createPedido(this.pedido)
+//     .subscribe(
+//       res => {
+//         console.log(res);
+//       },
+//       err => console.log(err),
+//     );
+//   }
 
 }
 
@@ -78,3 +70,4 @@ export class InputErrorsExample {
     Validators.email,
   ]);
 }
+

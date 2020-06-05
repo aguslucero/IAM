@@ -1,4 +1,4 @@
-
+<!--
 
 <div class="container " *ngIf="!created">
   <div class="row">
@@ -65,4 +65,44 @@
         <a class="btn btn-primary btn-sm" href="#" role="button">volver al home</a>
       </p>
     </div>
-    </div>
+    </div> -->
+
+    <div class="card promoting-card">
+
+
+
+      <div class="card booking-card">
+
+        <!-- Card image -->
+        <div class="view overlay">
+        <div  class="foto menu-img img" [style.background-image]="'url(http://localhost:3001/' + data.menu.imagePath + ')'"> </div>
+        </div>
+
+        <!-- Card content -->
+        <div class="card-body">
+
+          <!-- Title -->
+          <h4 class="card-title font-weight-bold"><a>{{data.menu.title}}</a></h4>
+          <!-- Data -->
+
+          <p class="mb-2">{{data.menu.price}} $</p>
+          <!-- Text -->
+          <p class="card-text">{{data.menu.description}}</p>
+          <div class="form-inline">
+            <label for="cant">cantidad:</label>
+            <div class="col-sm-5">
+              <select class="form-control" id="cant" [(ngModel)]="cant" >
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" (click)="agregarPedido()" >Agregar a mi pedido</button>
+
+
+        </div>
+
+      </div>
+      <!-- Card -->

@@ -8,8 +8,10 @@
     </div>
   </div>
 </section>
+<div class='flotante'>
+<a  [matBadgeHidden] = "cant == 0"[matBadge]="cant" matBadgeColor="warn" (click)=openDialogPedido() ><img src='../../../assets/images/cart.jpg' class="cart"/> </a>
+</div>
 <div class="col-md-12 tab-wrap" >
-
       <div class="row no-gutters d-flex align-items-stretch" >
         <div class="col-md-12 col-lg-6 d-flex align-self-stretch" *ngFor="let menu of menus">
           <div class="menus d-sm-flex  align-items-stretch">
@@ -27,11 +29,14 @@
                   </div>
                 </div>
                 <p>{{menu.description}}</p>
-                <p><a  class="btn btn-primary" (click)="openDialog(menu)">Pedir</a></p>
+                <p><a  class="btn btn-primary" (click)="openDialog(menu)">Agregar a mi pedido</a></p>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="buynow">
+      <p><a  class="btn btn-primary buy " >Mi pedido</a></p>
     </div>
 

@@ -64,8 +64,6 @@ export class MenusAdminComponent implements OnInit {
       data: {}
     });
 
-
-
     dialogRef.afterClosed().subscribe(result => {
       this.getMenus();
     });
@@ -77,8 +75,13 @@ export class MenusAdminComponent implements OnInit {
       width: '50%',
       data: {selectedMenu }
     });
-    dialogRef.afterClosed().subscribe(result => {
+    this.dialog.afterAllClosed.subscribe(data => {
       this.getMenus();
+      console.log('anda el afterclosed1');
+    });
+    dialogRef.afterClosed().subscribe(data => {
+      this.getMenus();
+      console.log('anda el afterclosed');
     });
   }
 

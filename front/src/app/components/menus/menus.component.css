@@ -5,3 +5,29 @@
     font-family: "Great Vibes", cursive;
 }
 
+.buynow{
+  text-align: center;
+  margin-top: 10px;
+}
+.buy{
+  color: black !important;
+}
+
+.flotante {
+  display:scroll;
+      position:fixed;
+      bottom:320px;
+      right:0px;
+      z-index: 1;
+      margin-right: 20px;
+      cursor: pointer;
+}
+
+.cart {
+  border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+  border: 0px solid #000000;
+  width: 50px;
+  height: 50px;
+}

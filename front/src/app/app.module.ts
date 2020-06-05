@@ -41,6 +41,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSelectModule} from '@angular/material/select';
 import { ModMenuComponent } from './components/mod-menu/mod-menu.component';
 import { AboutComponent } from './components/about/about.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatBadgeModule} from '@angular/material/badge';
+import { MiPedidoComponent } from './components/mi-pedido/mi-pedido.component';
 
 
 @NgModule({
@@ -62,7 +65,8 @@ import { AboutComponent } from './components/about/about.component';
     ReservasAdminComponent,
     CreateReservaAdminComponent,
     ModMenuComponent,
-    AboutComponent
+    AboutComponent,
+    MiPedidoComponent
   ],
   imports: [
     BrowserModule,
@@ -83,14 +87,17 @@ import { AboutComponent } from './components/about/about.component';
     MatCheckboxModule,
     MatTableModule,
     MatProgressSpinnerModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule,
+    MatBadgeModule
   ],
   providers: [  AuthGuard, PedidosGuard ],
   entryComponents: [
     CreateMenuComponent,
     ComprarComponent,
     CreateReservaAdminComponent,
-    ModMenuComponent
+    ModMenuComponent,
+    MiPedidoComponent,
   ],
   bootstrap: [AppComponent]
 })
