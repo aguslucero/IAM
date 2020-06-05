@@ -62,7 +62,7 @@ openDialog( menu: any): void {
 openDialogPedido( ): void {
   const dialogRef = this.dialog.open(MiPedidoComponent, {
     panelClass: 'custom-dialog-container',
-    width: '40%',
+    width: '35%',
     data: {}
   });
 

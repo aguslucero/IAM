@@ -1,0 +1,14 @@
+.card-title {
+   font-size: 30px;
+}
+
+.material-icons{
+    text-align: right;
+    vertical-align: center;
+    justify-content: flex-end;
+    
+}
+
+.card{
+    width: 100%;
+}
