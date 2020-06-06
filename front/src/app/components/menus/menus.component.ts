@@ -67,13 +67,18 @@ openDialogPedido( ): void {
   });
 
   dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
+    console.log(localStorage.getItem('menus'));
+    this.pedidosCant();
   });
 }
 
 pedidosCant() {
-  let menus = JSON.parse(localStorage.getItem('menus'));
+  const menus = JSON.parse(localStorage.getItem('menus'));
+  if (!menus) {
+    this.cant = 0;
+  } else {
   this.cant = menus.length;
+  }
 }
 
 }

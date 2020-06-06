@@ -40,8 +40,16 @@ export class ComprarComponent implements OnInit {
     if ( menusaux) {
       this.menus = JSON.parse(menusaux);
     }
-
+    const menu = this.menus.find(menuselected => menuselected.title === this.data.menu.title);
+    if ( menu ) {
+      const index = this.menus.indexOf(menu);
+      let cantidad = +this.menus[index].cant;
+      cantidad = cantidad + +this.cant;
+      this.menus[index].cant = cantidad;
+    } else {
+    this.data.menu.cant = this.cant;
     this.menus.push(this.data.menu);
+    }
     localStorage.setItem('menus', JSON.stringify(this.menus));
     this.created = true;
     this.pedido.state = 'pendiente';

@@ -1,17 +1,45 @@
 <div class="card" >
+
+    </div>
     <div class="card-body">
       <a class="card-title">Mi pedido</a>
-      <span class="material-icons ">
+      <span class="material-icons" (click)="deletedSelected()"  matTooltip="Eliminar el pedido">
         delete
-        </span>
-        </div>
+      </span>
+    <div *ngIf="delete" class="deleted">
+      <a class="deleteA">seguro que desea eliminar el pedido?</a>
+      <a (click)="deletePedido()" class="option"> Si </a>
+      <a> | </a>
+      <a (click)="cancelDelete()" class="option"> No</a>
+    </div>
+
+
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Vestibulum at eros</li>
+
+      <li *ngFor="let menu of menus" class="list-group-item">
+        <div *ngIf="deleteMenu !== menu.title">
+        <a class="listTitle">{{menu.title}}</a>
+        <a class="listCant"> {{menu.cant}}</a>
+        <a class="listPrice"> ${{menu.cant * menu.price}}</a>
+        <span class="material-icons listDelete " (click)="selectDeletedMenu(menu.title)" matTooltip="Eliminar el menu">
+          delete
+        </span>
+      </div>
+      <div *ngIf="deleteMenu == menu.title" class="deleted">
+        <a class="deleteA">seguro que desea eliminar el menu?</a>
+      <a (click)="deletedMenu()" class="option"> Si </a>
+      <a> | </a>
+      <a (click)="cancelDeletedMenu()" class="option"> No</a>
+      </div>
+      </li>
+
+
+
     </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+
+      <p class="total"> Total: ${{total}}</p>
+      <div class="card-buttons">
+      <a class="card-link btn btn-primary">Pedir</a>
+      <a class="card-link btn btn-primary" (click)="this.dialogRef.close()">Agregar otro producto</a>
     </div>
   </div>

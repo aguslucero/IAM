@@ -1,14 +1,78 @@
 .card-title {
    font-size: 30px;
+   margin-top: -30px
 }
 
 .material-icons{
     text-align: right;
     vertical-align: center;
     justify-content: flex-end;
-    
+    cursor: pointer;
 }
 
 .card{
     width: 100%;
+}
+
+.card-title{
+  display: inline-block;
+  width: 90%;
+}
+
+.material-icons{
+  color: red;
+}
+.listTitle {
+  display: inline-block;
+  width: 50%;
+
+}
+
+.listPrice {
+  display: inline-block;
+  width: 20%;
+}
+
+.listCant {
+  display: inline-block;
+  width: 10%;
+}
+
+.listDelete {
+  display: inline-block;
+  width: 20%;
+}
+
+.total {
+  font-size: 25px;
+  text-align: center;
+  color: #000000;
+}
+
+.deleteA{
+  display: inline-block;
+  width: 82%;
+}
+
+.option{
+  cursor: pointer;
+  margin: 2px;
+}
+
+.card-link{
+  cursor: pointer;
+}
+
+.deleted{
+  background-color: brown;
+  padding: 20px;
+  border-radius: 58px 58px 58px 58px;
+-moz-border-radius: 58px 58px 58px 58px;
+-webkit-border-radius: 58px 58px 58px 58px;
+border: 0px solid #000000;
+}
+
+.card-buttons {
+  width: 100%;
+  text-align: center;
 }

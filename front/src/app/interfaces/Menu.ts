@@ -3,6 +3,7 @@ export class Menu {
   imagePath: string;
   description: string;
   price: number;
+  cant: number;
 
   constructor() { }
 

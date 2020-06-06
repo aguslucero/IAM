@@ -11,9 +11,13 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./mi-pedido.component.css']
 })
 export class MiPedidoComponent implements OnInit {
+  delete = false;
+  deleteMenu = '';
   created = false;
   pedido = new Pedido();
   client = new Client();
+  total = 0;
+  menus = [];
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
@@ -24,7 +28,7 @@ export class MiPedidoComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any) {}
 
     ngOnInit( ) {
-      console.log(this.data);
+      this.getsMenusSelected();
     }
 
   onNoClick(): void {
@@ -50,8 +54,52 @@ export class MiPedidoComponent implements OnInit {
 //       err => console.log(err),
 //     );
 //   }
+getsMenusSelected() {
+ this.menus = JSON.parse(localStorage.getItem('menus'));
+ for (let menu of this.menus) {
+ this.total = this.total + menu.price * menu.cant;
+  }
+}
+
+deletedSelected() {
+  this.delete = true;
+}
+
+cancelDelete() {
+  this.delete = false;
+}
+
+selectDeletedMenu(title: string) {
+ this.deleteMenu = title;
+}
+
+deletePedido() {
+  localStorage.removeItem('menus');
+  this.menus = [];
+  this.dialogRef.close();
+}
+
+cancelDeletedMenu() {
+  this.deleteMenu = '';
+  console.log(this.deleteMenu);
+}
+
+deletedMenu( ) {
+ let deletemenu = this.menus.find(menu => menu.title === this.deleteMenu);
+ const index = this.menus.indexOf(deletemenu);
+ console.log(index);
+ this.menus.splice(index, 1);
+ localStorage.setItem('menus', JSON.stringify(this.menus));
+ deletemenu = '';
+ this.getsMenusSelected();
 
 }
+
+
+
+}
+
+
 
 export class Client {
   name: string;
