@@ -34,7 +34,7 @@
     <mat-optgroup *ngFor="let group of horarioGroups" [label]="group.name"
                   [disabled]="group.disabled">
       <mat-option *ngFor="let horario of group.horario" [value]="horario.value">
-        {{horario.value}}
+        {{horario.viewValue}}
       </mat-option>
     </mat-optgroup>
   </mat-select>

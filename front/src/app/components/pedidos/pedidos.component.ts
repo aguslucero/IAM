@@ -91,17 +91,17 @@ markAsReady(id: string) {
    const index = this.pending.findIndex(element => element._id = id );
    this.pending.splice(index, 1);
    this.pendingAux = this.pending;
-  //  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(pedido.email)) {
-  //   this.pedidosService.sendEmail(pedido.email, pedido.name, pedido.title)
-  //   .subscribe(
-  //     res => {
-  //     console.log(res);
-  //       },
-  //      err => console.log(err),
-  //    );
-  // } else {
-  //   console.log('invalid email');
-  // }
+   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(pedido.email)) {
+     this.pedidosService.sendEmail(pedido.email, pedido.name, )
+     .subscribe(
+       res => {
+       console.log(res);
+         },
+        err => console.log(err),
+      );
+   } else {
+     console.log('invalid email');
+   }
  }
 
 delivered(id: string) {
@@ -126,6 +126,10 @@ applyFilter(filterValue: string) {
  applyFilterPending(filterValue: string) {
   this.pending = this.pendingAux;
   this.pending = this.pending.filter( pedido => pedido.name.includes(filterValue) || pedido.lastName.includes(filterValue) );
+ }
+
+ prueba() {
+  console.log('pendientes', this.pending);
  }
 }
 

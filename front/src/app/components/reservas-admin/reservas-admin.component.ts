@@ -48,18 +48,18 @@ export class ReservasAdminComponent implements OnInit {
     {
       name: 'Medio Dia',
       horario: [
-        {viewValue: '11:00', value: '11'},
-        {viewValue: '12:00', value: '12'},
-        {viewValue: '13:00', value: '13'},
-        {viewValue: '14:00', value: '14'}
+        {viewValue: '11:00 hs', value: '11'},
+        {viewValue: '12:00 hs', value: '12'},
+        {viewValue: '13:00 hs', value: '13'},
+        {viewValue: '14:00 hs', value: '14'}
       ]
     },
     {
       name: 'noche',
       horario: [
-        {viewValue: '20:00', value: '20'},
-        {viewValue: '21:00', value: '21'},
-        {viewValue: '22:00', value: '22'}
+        {viewValue: '20:00 hs', value: '20'},
+        {viewValue: '21:00 hs', value: '21'},
+        {viewValue: '22:00 hs', value: '22'}
       ]
     }
   ];

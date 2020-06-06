@@ -19,7 +19,7 @@
       <li *ngFor="let menu of menus" class="list-group-item">
         <div *ngIf="deleteMenu !== menu.title">
         <a class="listTitle">{{menu.title}}</a>
-        <a class="listCant"> {{menu.cant}}</a>
+        <a class="listCant"> x{{menu.cant}}</a>
         <a class="listPrice"> ${{menu.cant * menu.price}}</a>
         <span class="material-icons listDelete " (click)="selectDeletedMenu(menu.title)" matTooltip="Eliminar el menu">
           delete

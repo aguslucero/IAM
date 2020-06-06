@@ -42,11 +42,10 @@ delivered(id: string) {
   );
 }
 
-sendEmail(email: string, name: string, title: string) {
+sendEmail(email: string, name: string) {
   return this.http.post('http://localhost:3001/api/nofication/sendEmail', {
     email,
     name,
-    title
   }
   );
 

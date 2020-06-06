@@ -93,3 +93,21 @@
   margin-left: 5%;
   width: 80%;
 }
+
+.text-primary{
+  color: black !important;
+}
+
+.list-group-item{
+  text-align: left;
+}
+
+.menuTitle{
+  display: inline-block;
+  width: 72%;
+}
+
+.badge{
+  display: inline-block;
+  width: 10%;
+}
