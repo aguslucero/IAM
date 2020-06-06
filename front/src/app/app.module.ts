@@ -44,6 +44,8 @@ import { AboutComponent } from './components/about/about.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatBadgeModule} from '@angular/material/badge';
 import { MiPedidoComponent } from './components/mi-pedido/mi-pedido.component';
+import { PedirComponent } from './components/pedir/pedir.component';
+
 
 
 @NgModule({
@@ -66,7 +68,8 @@ import { MiPedidoComponent } from './components/mi-pedido/mi-pedido.component';
     CreateReservaAdminComponent,
     ModMenuComponent,
     AboutComponent,
-    MiPedidoComponent
+    MiPedidoComponent,
+    PedirComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,6 +101,7 @@ import { MiPedidoComponent } from './components/mi-pedido/mi-pedido.component';
     CreateReservaAdminComponent,
     ModMenuComponent,
     MiPedidoComponent,
+    PedirComponent,
   ],
   bootstrap: [AppComponent]
 })

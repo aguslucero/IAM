@@ -1,9 +1,10 @@
 import { Menu } from 'src/app/interfaces/Menu';
 import { PedidosService } from './../../services/pedidos.service/pedidos.service';
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { Pedido } from 'src/app/interfaces/pedido';
 import {FormControl, Validators} from '@angular/forms';
+import { PedirComponent } from '../pedir/pedir.component';
 
 @Component({
   selector: 'app-mi-pedido',
@@ -23,6 +24,7 @@ export class MiPedidoComponent implements OnInit {
     Validators.email,
   ]);
   constructor(
+    public dialog: MatDialog,
     public dialogRef: MatDialogRef<MiPedidoComponent>,
     private pedidosService: PedidosService,
     @Inject(MAT_DIALOG_DATA) public data: any) {}
@@ -92,7 +94,24 @@ deletedMenu( ) {
  localStorage.setItem('menus', JSON.stringify(this.menus));
  deletemenu = '';
  this.getsMenusSelected();
+ this.total = 0;
+ for (let menu of this.menus) {
+  this.total = this.total + menu.price * menu.cant;
+   }
 
+}
+
+openDialogPedir( ): void {
+  const total = this.total;
+  const dialogRef = this.dialog.open(PedirComponent, {
+    panelClass: 'custom-dialog-container',
+    width: '35%',
+    data: { total }
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log(localStorage.getItem('menus'));
+  });
 }
 
 
