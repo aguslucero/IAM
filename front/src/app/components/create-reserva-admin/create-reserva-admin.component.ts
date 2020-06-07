@@ -21,6 +21,7 @@ export class CreateReservaAdminComponent implements OnInit {
   beforeToday = false;
   dia: string;
   created = false;
+  itsOk = true;
 
   constructor(private _formBuilder: FormBuilder, private reservaService: ReservaService,
               public dialogRef: MatDialogRef<MenusAdminComponent>,
@@ -42,7 +43,9 @@ export class CreateReservaAdminComponent implements OnInit {
    this.reservaService.createReserva(this.reserva)
    .subscribe(
     res => {
-    console.log(res);
+      if ( !res ) {
+        this.itsOk = false;
+      }
       },
      err => console.log(err),
    );
@@ -87,4 +90,9 @@ export class CreateReservaAdminComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  volverAResevas() {
+    this.availableHours = [];
+    this.itsOk = true;
+    this.created = false;
+  }
 }

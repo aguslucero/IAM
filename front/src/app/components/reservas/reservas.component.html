@@ -125,7 +125,7 @@
 
 
 <div class="container" *ngIf="created">
-  <div class="jumbotron text-center">
+  <div class="jumbotron text-center" *ngIf="itsOk">
     <h1 class="display-3">Reserva realizada correctamente</h1>
     <div>
       <p class="dataVerification">
@@ -146,4 +146,14 @@
       <a class="btn btn-primary btn-sm" href="#" role="button">volver al home</a>
     </p>
   </div>
+
+
+  <div class="jumbotron text-center" *ngIf="!itsOk">
+    <h1 class="display-3">No ha sido posible crear la reserva</h1>
+    <p>cantidad de mesas necesarias insuficientes</p>
+    <hr>
+    <p class="lead">
+      <a class="btn btn-primary btn-sm" (click)="volverAResevas()" role="button">volver al home</a>
+    </p>
   </div>
+</div>

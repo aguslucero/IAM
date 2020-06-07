@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Reserva } from 'src/app/interfaces/reserva';
 import * as moment from 'moment';
+import { Router } from '@angular/router';
 
 
 
@@ -21,8 +22,9 @@ export class ReservasComponent implements OnInit {
   beforeToday = false;
   dia: string;
   created = false;
+  itsOk = true;
 
-  constructor(private _formBuilder: FormBuilder, private reservaService: ReservaService) { }
+  constructor(private _formBuilder: FormBuilder, private reservaService: ReservaService, private router: Router) { }
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
@@ -40,7 +42,9 @@ export class ReservasComponent implements OnInit {
    this.reservaService.createReserva(this.reserva)
    .subscribe(
     res => {
-    console.log(res);
+      if ( !res ) {
+        this.itsOk = false;
+      }
       },
      err => console.log(err),
    );
@@ -80,5 +84,13 @@ export class ReservasComponent implements OnInit {
     this.reserva.personas --;
     }
   }
+
+  volverAResevas() {
+    this.availableHours = [];
+    this.itsOk = true;
+    this.created = false;
+  }
+
+
 
 }
