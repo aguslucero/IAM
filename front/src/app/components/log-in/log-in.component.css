@@ -8,3 +8,15 @@
   margin-left: 3%;
   margin-top: -3%;
 }
+
+.error{
+  color: white;
+  background-color: brown;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  border-radius: 58px 58px 58px 58px;
+-moz-border-radius: 58px 58px 58px 58px;
+-webkit-border-radius: 58px 58px 58px 58px;
+border: 0px solid #000000;
+}

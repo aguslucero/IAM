@@ -11,6 +11,7 @@ export class LogInComponent implements OnInit {
 
   email = '';
   password = '';
+  error = false;
 
   constructor( private router: Router , private auth: AuthService) { }
 
@@ -23,7 +24,10 @@ export class LogInComponent implements OnInit {
       localStorage.setItem('token', res.token);
       this.router.navigate(['/admin']);
     },
-    err => console.log(err),
+    err => {
+      console.log(err);
+      this.error = true;
+    }
   );
   }
 

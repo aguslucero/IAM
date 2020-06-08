@@ -12,6 +12,10 @@
         <span class="login100-form-title p-b-59">
           Iniciar sesión
         </span>
+        <div *ngIf="error" class="error">
+          <a class="deleteA">Usuario o contraseña incorrecta!!</a>
+
+        </div>
 
         <div class="wrap-input100 validate-input" data-validate="Campo obligatorio">
           <span class="label-input100">Usuario</span>
