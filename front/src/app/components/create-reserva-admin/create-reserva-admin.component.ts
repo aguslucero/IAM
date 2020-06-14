@@ -53,13 +53,29 @@ export class CreateReservaAdminComponent implements OnInit {
 
   tablesFoyDay() {
     this.availableHours = [];
+    const today = moment().format('DD-MM-YYYY');
+    const todayHour = moment().format('HH');
+    console.log(today, todayHour);
     this.beforeToday = false;
     const date = moment(this.reserva.dia).format('DD-MM-YYYY');
     this.reservaService.tablesFoyDay(date)
     .subscribe(
       (res: [] ) => {
         if (res) {
-      this.availableHours = res;
+         if ( today === date) {
+           let arrayAux = [];
+           res.forEach(function(value) {
+            let val = JSON.stringify(value);
+            let turn = JSON.parse(val);
+            if (turn.hour > todayHour) {
+             arrayAux.push(turn);
+             console.log('value', value);
+           }
+        });
+           this.availableHours = arrayAux;
+         } else {
+         this.availableHours = res;
+         }
         } else {
           this.beforeToday = true;
         }
